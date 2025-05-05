@@ -1,19 +1,19 @@
 import express from "express";
 
-const app = express();
-const port = 3000;
+const APP = express();
+const PORT = 3000;
 
-app.use(express.json());
+APP.use(express.json());
 
-app.get("/", (req, res) => {
+APP.get("/", (req, res) => {
   res.send("hello from backend to frontend!");
 });
 
-app.post("/weather", (req, res) => {
-  const cityName = req.body.cityName;
-  res.send(cityName);
+APP.post("/weather", (req, res) => {
+  const { cityName } = req.body;
+  res.send(`City Name: ${cityName}`);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+APP.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
 });
