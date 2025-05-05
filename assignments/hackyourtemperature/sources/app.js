@@ -2,15 +2,15 @@ import express from "express";
 import fetch from "node-fetch";
 import * as keys from "./keys.js";
 
-const APP = express();
+const app = express();
 
-APP.use(express.json());
+app.use(express.json());
 
-APP.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello from backend to frontend!");
 });
 
-APP.post("/weather", async (req, res) => {
+app.post("/weather", async (req, res) => {
   try {
     if (!req.body) {
       throw { weatherText: "Request body is missing" };
@@ -44,4 +44,4 @@ APP.post("/weather", async (req, res) => {
   }
 });
 
-export default APP;
+export default app;

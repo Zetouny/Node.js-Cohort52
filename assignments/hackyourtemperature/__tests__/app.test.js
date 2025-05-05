@@ -1,9 +1,9 @@
-import APP from "../sources/app.js";
+import app from "../sources/app.js";
 import * as keys from "../sources/keys.js";
 import supertest from "supertest";
 import fetch from "node-fetch";
 
-const request = supertest(APP);
+const request = supertest(app);
 
 describe("POST /weather", () => {
   it("Checking for request body", (done) => {
